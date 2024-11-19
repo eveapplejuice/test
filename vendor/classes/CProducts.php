@@ -20,10 +20,12 @@ class CProducts
         return mysqli_connect(self::host, self::user, self::password, self::dbname);
     }
 
-    public static function getProducts($quantity = false, $order = false)
+    /**
+     * @param integer $quantity задает ограничение по количеству товаров
+     * @param bool $order определяет необходимость сортировки
+     */
 
-        // $quantity - задает ограничение по количеству товаров
-        // $order - определяет необходимость сортировки
+    public static function getProducts($quantity = false, $order = false)
     {
         $query = 'SELECT ID, 
        PRODUCT_ID, 
@@ -53,11 +55,20 @@ class CProducts
 
     }
 
+    /**
+     * @param int $id id пользователя
+     * @param array $valuesArray ассоциативный массив вида ['столбец' => 'значение']
+     */
     public static function updateDB($id, $valuesArray)
     {
         $query = 'UPDATE ' . self::tableName . ' SET ' . self::generateSetRow($valuesArray) . ' WHERE ID = ' . $id;
         return mysqli_query(self::connectDB(),$query) or die(mysqli_error(self::connectDB()));
     }
+
+    /**
+     * Функция принимает на вход ассоциативный массив и разбивает его на строку для дальнейшей работы с MySQL UPDATE
+     * @param array $array ассоциативный массив
+     */
 
     public static function generateSetRow($array): string
     {

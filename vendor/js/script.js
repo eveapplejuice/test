@@ -1,6 +1,7 @@
-$(document).ready(function () {
-
-    $('.hide-btn').on('click', function (e) {
+$(document).ready(function ()
+{
+    $('.hide-btn').on('click', function (e)
+    {
         let $trName = $(e.target).parents('tr');
         let $productID = $trName.attr('data-product-id');
         $.ajax({
@@ -19,7 +20,8 @@ $(document).ready(function () {
         });
     });
 
-    function changeQuantity(e, action) {
+    function changeQuantity(e, action)
+    {
         let $trProduct = $(e.target).parents('tr');
         let $productID = $trProduct.attr('data-product-id');
         let $quantityInput = $trProduct.find('.product-qty');
@@ -56,5 +58,4 @@ $(document).ready(function () {
     $('.product-qty').on('change', function (e) {
         changeQuantity(e, 'input');
     });
-
 });
