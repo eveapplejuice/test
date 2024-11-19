@@ -1,0 +1,71 @@
+html, body {
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.table-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.products-table {
+    box-shadow: 0 0 10px -2px rgba(34, 60, 80, 0.38);
+    padding: 10px;
+    border-spacing: 0;
+    border-radius: 5px;
+    cursor: default;
+
+}
+
+.products-table tr:not(:first-child):hover {
+    background-color: rgba(34, 60, 80, 0.05);
+
+}
+
+.products-table td {
+    padding: 7px;
+    text-align: center;
+}
+
+.hide-btn {
+    cursor: pointer;
+    padding: 3px 7px;
+    background-color: #DCDCDC;
+    border-radius: 5px;
+}
+
+.hide-btn:hover {
+    background-color: #C0C0C0	;
+}
+
+.quantity-td {
+    display: flex;
+    justify-content: center;
+}
+
+.quantity-td input {
+    width: 30px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0 7px;
+}
+
+.change-quantity {
+    padding: 3px 7px;
+    width: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    background-color: rgba(211,217,217, 0.6);
+    border-radius: 5px;
+}
+
+.change-quantity:hover {
+    background-color: rgb(176,179,179);
+}
+
+.product-qty {
+    border: none;
+}
